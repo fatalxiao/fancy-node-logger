@@ -5,7 +5,7 @@
 // Vendors
 import chalk from 'chalk';
 
-class FancyNodeLog {
+class FancyNodeLogger {
 
     static TYPE = {
         NOTE: 'NOTE',
@@ -126,4 +126,4 @@ class FancyNodeLog {
 
 }
 
-export default new FancyNodeLog();
+export default new FancyNodeLogger();
