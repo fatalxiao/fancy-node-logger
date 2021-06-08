@@ -3,9 +3,15 @@
     "author": "liangxiaojun",
     "version": "0.0.1",
     "description": "Fancy log in Node with Chalk",
-    "main": "./src/index.js",
+    "main": "./dist/index.js",
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
     "scripts": {
-        "build": "webpack --config ./build/webpack.product.config.js"
+        "build": "webpack --config ./build/webpack.product.config.js",
+        "do-publish": "npm run build && npm publish"
     },
     "repository": {
         "type": "git",
