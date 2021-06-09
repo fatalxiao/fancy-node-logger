@@ -2,8 +2,11 @@
 
 const FancyNodeLogger = require('../dist');
 
-FancyNodeLogger.note('NOTE', 'Note Title', 'Note Message\n');
-FancyNodeLogger.info('INFO', 'Infomation Title', 'Infomation Message\n');
-FancyNodeLogger.success('Done', 'Success Title', 'Success Message\n');
-FancyNodeLogger.warning('WARNING', 'Warning Title', 'Warning Message\n');
-FancyNodeLogger.error('ERROR', 'Error Title', 'Error Message\n');
+FancyNodeLogger.note('Note Title', 'Note Message');
+FancyNodeLogger.verbose('Verbose Title', 'Verbose Message');
+FancyNodeLogger.info('Infomation Title', 'Infomation Message');
+FancyNodeLogger.success('Success Title', 'Success Message');
+FancyNodeLogger.done('Done Title', 'Done Message');
+FancyNodeLogger.warning('Warning Title', 'Warning Message');
+FancyNodeLogger.error('Error Title', 'Error Message');
+FancyNodeLogger.failure('Failure Title', 'Failure Message');

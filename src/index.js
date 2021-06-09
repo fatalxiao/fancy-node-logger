@@ -120,13 +120,16 @@ class FancyNodeLogger {
      */
     print = (severity, severityStyles, title, titleStyles, msg, msgStyles) => {
 
-        const severityText = this.formatText(severity, severityStyles),
-            titleText = this.formatText(title, titleStyles),
-            msgText = this.formatText(msg, msgStyles);
+        const severityData = this.formatText(severity, severityStyles),
+            severityText = severityData ? `${severityData} ` : '',
 
-        console.log(
-            `${severityText ? `${severityText} ` : ''}${titleText ? `${titleText} ` : ''}${msgText ? msgText : ''}`
-        );
+            titleData = this.formatText(title, titleStyles),
+            titleText = titleData ? `${titleData} ` : '',
+
+            msgData = this.formatText(msg, msgStyles),
+            msgText = msgData ? `\n${msgData}\n` : '';
+
+        console.log(`${severityText}${titleText}${msgText}`);
 
     };
 
@@ -152,7 +155,15 @@ class FancyNodeLogger {
      * @param args
      */
     note = (...args) => {
-        this.output(FancyNodeLogger.TYPE.NOTE, ...args);
+        this.output(FancyNodeLogger.TYPE.NOTE, 'NOTE', ...args);
+    };
+
+    /**
+     * print a verbose type log
+     * @param args
+     */
+    verbose = (...args) => {
+        this.output(FancyNodeLogger.TYPE.NOTE, 'VERBOSE', ...args);
     };
 
     /**
@@ -160,7 +171,7 @@ class FancyNodeLogger {
      * @param args
      */
     info = (...args) => {
-        this.output(FancyNodeLogger.TYPE.INFO, ...args);
+        this.output(FancyNodeLogger.TYPE.INFO, 'INFO', ...args);
     };
 
     /**
@@ -168,7 +179,15 @@ class FancyNodeLogger {
      * @param args
      */
     success = (...args) => {
-        this.output(FancyNodeLogger.TYPE.SUCCESS, ...args);
+        this.output(FancyNodeLogger.TYPE.SUCCESS, 'SUCCESS', ...args);
+    };
+
+    /**
+     * print a done type log
+     * @param args
+     */
+    done = (...args) => {
+        this.output(FancyNodeLogger.TYPE.SUCCESS, 'DONE', ...args);
     };
 
     /**
@@ -176,7 +195,7 @@ class FancyNodeLogger {
      * @param args
      */
     warning = (...args) => {
-        this.output(FancyNodeLogger.TYPE.WARNING, ...args);
+        this.output(FancyNodeLogger.TYPE.WARNING, 'WARNING', ...args);
     };
 
     /**
@@ -184,7 +203,15 @@ class FancyNodeLogger {
      * @param args
      */
     error = (...args) => {
-        this.output(FancyNodeLogger.TYPE.ERROR, ...args);
+        this.output(FancyNodeLogger.TYPE.ERROR, 'ERROR', ...args);
+    };
+
+    /**
+     * print an failure type log
+     * @param args
+     */
+    failure = (...args) => {
+        this.output(FancyNodeLogger.TYPE.ERROR, 'FAILURE', ...args);
     };
 
 }
