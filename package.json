@@ -1,7 +1,7 @@
 {
     "name": "fancy-node-logger",
     "author": "liangxiaojun",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Fancy logger in Node with Chalk",
     "main": "./dist/index.js",
     "files": [
@@ -20,9 +20,10 @@
         "url": "https://github.com/fatalxiao/fancy-node-logger"
     },
     "keywords": [
-        "NodeJs",
-        "Logger",
-        "Chalk"
+        "node",
+        "nodeJs",
+        "logger",
+        "chalk"
     ],
     "license": "MIT",
     "bugs": {
