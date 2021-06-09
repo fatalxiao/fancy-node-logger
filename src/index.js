@@ -2,9 +2,14 @@
  * @file index.js
  */
 
+'use strict';
+
 // Vendors
 const chalk = require('chalk');
 
+/**
+ * FancyNodeLogger class
+ */
 class FancyNodeLogger {
 
     static TYPE = {
@@ -15,7 +20,12 @@ class FancyNodeLogger {
         ERROR: 'ERROR'
     };
 
-    getMessages = (...args) => {
+    /**
+     * parse title and messages by args
+     * @param args
+     * @returns {*[]|[*]|[*, *, *]|[*, null, *]}
+     */
+    parseMessages = (...args) => {
         switch (args?.length) {
             case 1:
                 return [args[0]];
@@ -28,6 +38,11 @@ class FancyNodeLogger {
         }
     };
 
+    /**
+     * get default severity style
+     * @param type
+     * @returns {string[]}
+     */
     getDefaultSeverityStyle = type => {
         switch (type) {
             case FancyNodeLogger.TYPE.NOTE:
@@ -45,6 +60,11 @@ class FancyNodeLogger {
         }
     };
 
+    /**
+     * get default title style
+     * @param type
+     * @returns {[string]}
+     */
     getDefaultTitleStyle = type => {
         switch (type) {
             case FancyNodeLogger.TYPE.NOTE:
@@ -62,6 +82,12 @@ class FancyNodeLogger {
         }
     };
 
+    /**
+     * format log text
+     * @param text
+     * @param styles
+     * @returns {string|*}
+     */
     formatText = (text, styles) => {
 
         if (!text) {
@@ -83,20 +109,37 @@ class FancyNodeLogger {
 
     };
 
-    base = (severity, severityStyles, title, titleStyles, msg) => {
+    /**
+     * base function to print log
+     * @param severity
+     * @param severityStyles
+     * @param title
+     * @param titleStyles
+     * @param msg
+     * @param msgStyles
+     */
+    print = (severity, severityStyles, title, titleStyles, msg, msgStyles) => {
 
         const severityText = this.formatText(severity, severityStyles),
-            titleText = this.formatText(title, titleStyles);
+            titleText = this.formatText(title, titleStyles),
+            msgText = this.formatText(msg, msgStyles);
 
-        console.log(`${severityText ? `${severityText} ` : ''}${titleText ? `${titleText} ` : ''}${msg}`);
+        console.log(
+            `${severityText ? `${severityText} ` : ''}${titleText ? `${titleText} ` : ''}${msgText ? msgText : ''}`
+        );
 
     };
 
+    /**
+     * base function to print a log by a customized type
+     * @param type
+     * @param args
+     */
     output = (type, ...args) => {
 
-        const [severity, title, msg] = this.getMessages(...args);
+        const [severity, title, msg] = this.parseMessages(...args);
 
-        this.base(
+        this.print(
             severity, this.getDefaultSeverityStyle(type),
             title, this.getDefaultTitleStyle(type),
             msg
@@ -104,22 +147,42 @@ class FancyNodeLogger {
 
     };
 
+    /**
+     * print a note type log
+     * @param args
+     */
     note = (...args) => {
         this.output(FancyNodeLogger.TYPE.NOTE, ...args);
     };
 
+    /**
+     * print an information type log
+     * @param args
+     */
     info = (...args) => {
         this.output(FancyNodeLogger.TYPE.INFO, ...args);
     };
 
+    /**
+     * print a success type log
+     * @param args
+     */
     success = (...args) => {
         this.output(FancyNodeLogger.TYPE.SUCCESS, ...args);
     };
 
+    /**
+     * print a warning type log
+     * @param args
+     */
     warning = (...args) => {
         this.output(FancyNodeLogger.TYPE.WARNING, ...args);
     };
 
+    /**
+     * print an error type log
+     * @param args
+     */
     error = (...args) => {
         this.output(FancyNodeLogger.TYPE.ERROR, ...args);
     };

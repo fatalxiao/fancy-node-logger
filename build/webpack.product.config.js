@@ -26,6 +26,10 @@ module.exports = merge(baseConfig, {
             type: 'commonjs'
         },
         clean: true
+    },
+
+    externals: {
+        chalk: 'chalk'
     }
 
 });
