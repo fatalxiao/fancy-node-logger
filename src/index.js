@@ -175,6 +175,14 @@ class FancyNodeLogger {
     };
 
     /**
+     * print an wait type log
+     * @param args
+     */
+    wait = (...args) => {
+        this.output(FancyNodeLogger.TYPE.INFO, 'WAIT', ...args);
+    };
+
+    /**
      * print a success type log
      * @param args
      */
