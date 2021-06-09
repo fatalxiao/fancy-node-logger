@@ -3,7 +3,7 @@
  */
 
 // Vendors
-import chalk from 'chalk';
+const chalk = require('chalk');
 
 class FancyNodeLogger {
 
@@ -30,15 +30,15 @@ class FancyNodeLogger {
 
     getDefaultSeverityStyle = type => {
         switch (type) {
-            case Index.TYPE.NOTE:
+            case FancyNodeLogger.TYPE.NOTE:
                 return ['bgWhite', 'black'];
-            case Index.TYPE.INFO:
+            case FancyNodeLogger.TYPE.INFO:
                 return ['bgBlueBright', 'black'];
-            case Index.TYPE.SUCCESS:
+            case FancyNodeLogger.TYPE.SUCCESS:
                 return ['bgGreenBright', 'black'];
-            case Index.TYPE.WARNING:
+            case FancyNodeLogger.TYPE.WARNING:
                 return ['bgYellowBright', 'black'];
-            case Index.TYPE.ERROR:
+            case FancyNodeLogger.TYPE.ERROR:
                 return ['bgRedBright', 'black'];
             default:
                 return ['bgWhite', 'black'];
@@ -47,15 +47,15 @@ class FancyNodeLogger {
 
     getDefaultTitleStyle = type => {
         switch (type) {
-            case Index.TYPE.NOTE:
+            case FancyNodeLogger.TYPE.NOTE:
                 return ['white'];
-            case Index.TYPE.INFO:
+            case FancyNodeLogger.TYPE.INFO:
                 return ['blueBright'];
-            case Index.TYPE.SUCCESS:
+            case FancyNodeLogger.TYPE.SUCCESS:
                 return ['greenBright'];
-            case Index.TYPE.WARNING:
+            case FancyNodeLogger.TYPE.WARNING:
                 return ['yellowBright'];
-            case Index.TYPE.ERROR:
+            case FancyNodeLogger.TYPE.ERROR:
                 return ['redBright'];
             default:
                 return ['white'];
@@ -105,25 +105,25 @@ class FancyNodeLogger {
     };
 
     note = (...args) => {
-        this.output(Index.TYPE.NOTE, ...args);
+        this.output(FancyNodeLogger.TYPE.NOTE, ...args);
     };
 
     info = (...args) => {
-        this.output(Index.TYPE.INFO, ...args);
+        this.output(FancyNodeLogger.TYPE.INFO, ...args);
     };
 
     success = (...args) => {
-        this.output(Index.TYPE.SUCCESS, ...args);
+        this.output(FancyNodeLogger.TYPE.SUCCESS, ...args);
     };
 
     warning = (...args) => {
-        this.output(Index.TYPE.WARNING, ...args);
+        this.output(FancyNodeLogger.TYPE.WARNING, ...args);
     };
 
     error = (...args) => {
-        this.output(Index.TYPE.ERROR, ...args);
+        this.output(FancyNodeLogger.TYPE.ERROR, ...args);
     };
 
 }
 
-export default new FancyNodeLogger();
+module.exports = new FancyNodeLogger();

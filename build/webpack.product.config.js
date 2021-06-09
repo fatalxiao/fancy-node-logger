@@ -19,15 +19,11 @@ module.exports = merge(baseConfig, {
         index: './src/index.js'
     },
 
-    experiments: {
-        outputModule: true
-    },
-
     output: {
         path: path.join(__dirname, '../dist'),
         filename: '[name].js',
         library: {
-            type: 'module'
+            type: 'commonjs'
         },
         clean: true
     }

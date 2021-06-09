@@ -37,7 +37,9 @@ module.exports = {
 
         // 测试用例专用
         'test': {
-            presets
+            'presets': [
+                '@babel/preset-env'
+            ]
         },
 
         // production 打包环境
