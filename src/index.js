@@ -127,7 +127,7 @@ class FancyNodeLogger {
             titleText = titleData ? `${titleData} ` : '',
 
             msgData = this.formatText(msg, msgStyles),
-            msgText = msgData ? `\n${msgData}\n` : '';
+            msgText = msgData ? `${titleData ? '\n' : ''}${msgData}\n` : '';
 
         console.log(`${severityText}${titleText}${msgText}`);
 
