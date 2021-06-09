@@ -4,24 +4,24 @@
 
 'use strict';
 
-const FancyNodeLogger = require('../dist');
+const fancyNodeLogger = require('../dist');
 
 // Without Title
-FancyNodeLogger.note('Note Message');
-FancyNodeLogger.verbose('Verbose Message');
-FancyNodeLogger.info('Infomation Message');
-FancyNodeLogger.success('Success Message');
-FancyNodeLogger.done('Done Message');
-FancyNodeLogger.warning('Warning Message');
-FancyNodeLogger.error('Error Message');
-FancyNodeLogger.failure('Failure Message');
+fancyNodeLogger.note('Note Message');
+fancyNodeLogger.verbose('Verbose Message');
+fancyNodeLogger.info('Infomation Message');
+fancyNodeLogger.success('Success Message');
+fancyNodeLogger.done('Done Message');
+fancyNodeLogger.warning('Warning Message');
+fancyNodeLogger.error('Error Message');
+fancyNodeLogger.failure('Failure Message');
 
 // With Title
-FancyNodeLogger.note('Note Title', 'Note Message');
-FancyNodeLogger.verbose('Verbose Title', 'Verbose Message');
-FancyNodeLogger.info('Infomation Title', 'Infomation Message');
-FancyNodeLogger.success('Success Title', 'Success Message');
-FancyNodeLogger.done('Done Title', 'Done Message');
-FancyNodeLogger.warning('Warning Title', 'Warning Message');
-FancyNodeLogger.error('Error Title', 'Error Message');
-FancyNodeLogger.failure('Failure Title', 'Failure Message');
+fancyNodeLogger.note('Note Title', 'Note Message');
+fancyNodeLogger.verbose('Verbose Title', 'Verbose Message');
+fancyNodeLogger.info('Infomation Title', 'Infomation Message');
+fancyNodeLogger.success('Success Title', 'Success Message');
+fancyNodeLogger.done('Done Title', 'Done Message');
+fancyNodeLogger.warning('Warning Title', 'Warning Message');
+fancyNodeLogger.error('Error Title', 'Error Message');
+fancyNodeLogger.failure('Failure Title', 'Failure Message');
