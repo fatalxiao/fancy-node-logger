@@ -1,3 +1,7 @@
+/**
+ * @file base.js
+ */
+
 'use strict';
 
 const FancyNodeLogger = require('../dist');

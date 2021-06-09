@@ -34,19 +34,10 @@ const presets = [
 
 module.exports = {
     'env': {
-
-        // 测试用例专用
-        'test': {
-            'presets': [
-                '@babel/preset-env'
-            ]
-        },
-
         // production 打包环境
         'production': {
             presets,
             plugins
         }
-
     }
 };
