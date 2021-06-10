@@ -4,6 +4,9 @@
 
 'use strict';
 
+// Statics
+const Type = require('./Type');
+
 // Vendors
 const chalk = require('chalk');
 
@@ -11,14 +14,6 @@ const chalk = require('chalk');
  * FancyNodeLogger class
  */
 class FancyNodeLogger {
-
-    static TYPE = {
-        NOTE: 'NOTE',
-        INFO: 'INFO',
-        SUCCESS: 'SUCCESS',
-        WARNING: 'WARNING',
-        ERROR: 'ERROR'
-    };
 
     /**
      * parse title and messages by args
@@ -45,15 +40,15 @@ class FancyNodeLogger {
      */
     getDefaultSeverityStyle = type => {
         switch (type) {
-            case FancyNodeLogger.TYPE.NOTE:
+            case Type.VERBOSE:
                 return ['bgWhite', 'black'];
-            case FancyNodeLogger.TYPE.INFO:
+            case Type.INFO:
                 return ['bgBlueBright', 'black'];
-            case FancyNodeLogger.TYPE.SUCCESS:
+            case Type.SUCCESS:
                 return ['bgGreenBright', 'black'];
-            case FancyNodeLogger.TYPE.WARNING:
+            case Type.WARNING:
                 return ['bgYellowBright', 'black'];
-            case FancyNodeLogger.TYPE.ERROR:
+            case Type.ERROR:
                 return ['bgRedBright', 'black'];
             default:
                 return ['bgWhite', 'black'];
@@ -67,15 +62,15 @@ class FancyNodeLogger {
      */
     getDefaultTitleStyle = type => {
         switch (type) {
-            case FancyNodeLogger.TYPE.NOTE:
+            case Type.VERBOSE:
                 return ['white'];
-            case FancyNodeLogger.TYPE.INFO:
+            case Type.INFO:
                 return ['blueBright'];
-            case FancyNodeLogger.TYPE.SUCCESS:
+            case Type.SUCCESS:
                 return ['greenBright'];
-            case FancyNodeLogger.TYPE.WARNING:
+            case Type.WARNING:
                 return ['yellowBright'];
-            case FancyNodeLogger.TYPE.ERROR:
+            case Type.ERROR:
                 return ['redBright'];
             default:
                 return ['white'];
@@ -155,7 +150,7 @@ class FancyNodeLogger {
      * @param args
      */
     note = (...args) => {
-        this.output(FancyNodeLogger.TYPE.NOTE, 'NOTE', ...args);
+        this.output(Type.VERBOSE, 'NOTE', ...args);
     };
 
     /**
@@ -163,7 +158,7 @@ class FancyNodeLogger {
      * @param args
      */
     verbose = (...args) => {
-        this.output(FancyNodeLogger.TYPE.NOTE, 'VERBOSE', ...args);
+        this.output(Type.VERBOSE, 'VERBOSE', ...args);
     };
 
     /**
@@ -171,7 +166,7 @@ class FancyNodeLogger {
      * @param args
      */
     info = (...args) => {
-        this.output(FancyNodeLogger.TYPE.INFO, 'INFO', ...args);
+        this.output(Type.INFO, 'INFO', ...args);
     };
 
     /**
@@ -179,7 +174,7 @@ class FancyNodeLogger {
      * @param args
      */
     wait = (...args) => {
-        this.output(FancyNodeLogger.TYPE.INFO, 'WAIT', ...args);
+        this.output(Type.INFO, 'WAIT', ...args);
     };
 
     /**
@@ -187,7 +182,7 @@ class FancyNodeLogger {
      * @param args
      */
     success = (...args) => {
-        this.output(FancyNodeLogger.TYPE.SUCCESS, 'SUCCESS', ...args);
+        this.output(Type.SUCCESS, 'SUCCESS', ...args);
     };
 
     /**
@@ -195,7 +190,7 @@ class FancyNodeLogger {
      * @param args
      */
     done = (...args) => {
-        this.output(FancyNodeLogger.TYPE.SUCCESS, 'DONE', ...args);
+        this.output(Type.SUCCESS, 'DONE', ...args);
     };
 
     /**
@@ -203,7 +198,7 @@ class FancyNodeLogger {
      * @param args
      */
     warning = (...args) => {
-        this.output(FancyNodeLogger.TYPE.WARNING, 'WARNING', ...args);
+        this.output(Type.WARNING, 'WARNING', ...args);
     };
 
     /**
@@ -211,7 +206,7 @@ class FancyNodeLogger {
      * @param args
      */
     error = (...args) => {
-        this.output(FancyNodeLogger.TYPE.ERROR, 'ERROR', ...args);
+        this.output(Type.ERROR, 'ERROR', ...args);
     };
 
     /**
@@ -219,9 +214,12 @@ class FancyNodeLogger {
      * @param args
      */
     failure = (...args) => {
-        this.output(FancyNodeLogger.TYPE.ERROR, 'FAILURE', ...args);
+        this.output(Type.ERROR, 'FAILURE', ...args);
     };
 
 }
 
-module.exports = new FancyNodeLogger();
+const fancyNodeLogger = new FancyNodeLogger();
+fancyNodeLogger.Type = Type;
+
+module.exports = fancyNodeLogger;
