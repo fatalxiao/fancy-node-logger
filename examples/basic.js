@@ -14,6 +14,7 @@ fancyNodeLogger.wait('Wait Message');
 fancyNodeLogger.success('Success Message');
 fancyNodeLogger.done('Done Message');
 fancyNodeLogger.warning('Warning Message');
+fancyNodeLogger.issue('Issue Message');
 fancyNodeLogger.error('Error Message');
 fancyNodeLogger.failure('Failure Message');
 
@@ -25,5 +26,6 @@ fancyNodeLogger.wait('Wait Title', 'Wait Message');
 fancyNodeLogger.success('Success Title', 'Success Message');
 fancyNodeLogger.done('Done Title', 'Done Message');
 fancyNodeLogger.warning('Warning Title', 'Warning Message');
+fancyNodeLogger.issue('Issue Title', 'Issue Message');
 fancyNodeLogger.error('Error Title', 'Error Message');
 fancyNodeLogger.failure('Failure Title', 'Failure Message');

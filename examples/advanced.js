@@ -14,6 +14,7 @@ fancyNodeLogger.output(fancyNodeLogger.Type.INFO, 'WAIT', 'Wait Message');
 fancyNodeLogger.output(fancyNodeLogger.Type.SUCCESS, 'SUCCESS', 'Success Message');
 fancyNodeLogger.output(fancyNodeLogger.Type.SUCCESS, 'DONE', 'Done Message');
 fancyNodeLogger.output(fancyNodeLogger.Type.WARNING, 'WARNING', 'Warning Message');
+fancyNodeLogger.output(fancyNodeLogger.Type.WARNING, 'ISSUE', 'Issue Message');
 fancyNodeLogger.output(fancyNodeLogger.Type.ERROR, 'ERROR', 'Error Message');
 fancyNodeLogger.output(fancyNodeLogger.Type.ERROR, 'FAILURE', 'Failure Message');
 
@@ -25,5 +26,6 @@ fancyNodeLogger.output(fancyNodeLogger.Type.INFO, 'WAIT', 'Wait Title', 'Wait Me
 fancyNodeLogger.output(fancyNodeLogger.Type.SUCCESS, 'SUCCESS', 'Success Title', 'Success Message');
 fancyNodeLogger.output(fancyNodeLogger.Type.SUCCESS, 'DONE', 'Done Title', 'Done Message');
 fancyNodeLogger.output(fancyNodeLogger.Type.WARNING, 'WARNING', 'Warning Title', 'Warning Message');
+fancyNodeLogger.output(fancyNodeLogger.Type.WARNING, 'ISSUE', 'Issue Title', 'Issue Message');
 fancyNodeLogger.output(fancyNodeLogger.Type.ERROR, 'ERROR', 'Error Title', 'Error Message');
 fancyNodeLogger.output(fancyNodeLogger.Type.ERROR, 'FAILURE', 'Failure Title', 'Failure Message');

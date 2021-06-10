@@ -202,6 +202,14 @@ class FancyNodeLogger {
     };
 
     /**
+     * print a warning type log
+     * @param args
+     */
+    issue = (...args) => {
+        this.output(Type.WARNING, 'ISSUE', ...args);
+    };
+
+    /**
      * print an error type log
      * @param args
      */
