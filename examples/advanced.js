@@ -4,6 +4,7 @@
 
 'use strict';
 
+// Vendors
 const fancyNodeLogger = require('../src');
 
 // Without Title

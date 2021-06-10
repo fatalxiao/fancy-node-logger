@@ -146,83 +146,112 @@ class FancyNodeLogger {
     };
 
     /**
-     * print a note type log
-     * @param args
+     * create an self defined logger
+     * @param type
+     * @param severity
+     * @returns {function(...[*]): void}
      */
-    note = (...args) => {
-        this.output(Type.VERBOSE, 'NOTE', ...args);
+    createLogger = (type, severity) => {
+        return (...args) => this.output(type, severity, ...args);
     };
 
     /**
-     * print a verbose type log
+     * regist self defined logger to instance
+     * @param name
+     * @param logger
+     */
+    registLogger = (name, logger) => {
+        return this[name] = logger;
+    };
+
+    /**
+     * print a verbose log
      * @param args
      */
     verbose = (...args) => {
         this.output(Type.VERBOSE, 'VERBOSE', ...args);
+        return this;
     };
 
     /**
-     * print an information type log
+     * print a note log
+     * @param args
+     */
+    note = (...args) => {
+        this.output(Type.VERBOSE, 'NOTE', ...args);
+        return this;
+    };
+
+    /**
+     * print an information log
      * @param args
      */
     info = (...args) => {
         this.output(Type.INFO, 'INFO', ...args);
+        return this;
     };
 
     /**
-     * print an wait type log
+     * print a wait log
      * @param args
      */
     wait = (...args) => {
         this.output(Type.INFO, 'WAIT', ...args);
+        return this;
     };
 
     /**
-     * print a success type log
+     * print a success log
      * @param args
      */
     success = (...args) => {
         this.output(Type.SUCCESS, 'SUCCESS', ...args);
+        return this;
     };
 
     /**
-     * print a done type log
+     * print a done log
      * @param args
      */
     done = (...args) => {
         this.output(Type.SUCCESS, 'DONE', ...args);
+        return this;
     };
 
     /**
-     * print a warning type log
+     * print a warning log
      * @param args
      */
     warning = (...args) => {
         this.output(Type.WARNING, 'WARNING', ...args);
+        return this;
     };
 
     /**
-     * print a warning type log
+     * print an issue log
      * @param args
      */
     issue = (...args) => {
         this.output(Type.WARNING, 'ISSUE', ...args);
+        return this;
     };
 
     /**
-     * print an error type log
+     * print an error log
      * @param args
      */
     error = (...args) => {
         this.output(Type.ERROR, 'ERROR', ...args);
+        return this;
     };
 
     /**
-     * print an failure type log
+     * print a failure log
      * @param args
      */
     failure = (...args) => {
         this.output(Type.ERROR, 'FAILURE', ...args);
+        return this;
     };
 
 }

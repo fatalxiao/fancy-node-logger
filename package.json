@@ -10,7 +10,7 @@
         "README.md"
     ],
     "scripts": {
-        "example": "node examples/advanced.js",
+        "example": "node examples/customized.js",
         "build": "gulp build",
         "do-publish": "npm run build && npm publish"
     },
