@@ -5,9 +5,7 @@
 /* eslint-disable no-magic-numbers */
 module.exports = {
     'env': {
-        'browser': true,
-        'node': true,
-        'es6': true
+        'node': true
     },
     'globals': {
         'Atomics': 'readonly',
