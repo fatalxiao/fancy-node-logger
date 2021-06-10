@@ -11,7 +11,7 @@
     ],
     "scripts": {
         "example": "node demo",
-        "build": "gulp build",
+        "build": "gulp",
         "do-publish": "npm run build && npm publish"
     },
     "repository": {
@@ -41,6 +41,7 @@
         "esm": "^3.2.25",
         "gulp": "^4.0.2",
         "gulp-babel": "^8.0.0",
+        "gulp-clean": "^0.4.0",
         "gulp-uglify": "^3.0.2"
     }
 }
