@@ -4,7 +4,7 @@
 
 'use strict';
 
-const fancyNodeLogger = require('../dist');
+const fancyNodeLogger = require('../src');
 
 // Without Title
 fancyNodeLogger.output(fancyNodeLogger.Type.VERBOSE, 'VERBOSE', 'Verbose Message');
