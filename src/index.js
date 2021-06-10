@@ -58,7 +58,7 @@ class FancyNodeLogger {
             return text;
         }
 
-        return chalkInstance('', text, '');
+        return chalkInstance(text);
 
     };
 
@@ -73,14 +73,9 @@ class FancyNodeLogger {
      */
     print = (severity, severityStyles, title, titleStyles, msg, msgStyles) => {
 
-        const severityData = this.formatText(severity, severityStyles),
-            severityText = severityData ? `${severityData} ` : '',
-
-            titleData = this.formatText(title, titleStyles),
-            titleText = titleData ? `${titleData} ` : '',
-
-            msgData = this.formatText(msg, msgStyles),
-            msgText = msgData ? `${titleData ? '\n' : ''}${msgData}\n` : '';
+        const severityText = severity ? this.formatText(` ${severity} `, severityStyles) + ' ' : '',
+            titleText = title ? this.formatText(title, titleStyles) + ' ' : '',
+            msgText = msg ? this.formatText(msg, msgStyles) + ' ' : '';
 
         console.log(`${severityText}${titleText}${msgText}`);
 

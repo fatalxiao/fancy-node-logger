@@ -8,25 +8,25 @@
 const fancyNodeLogger = require('../src');
 
 // Without Title
-fancyNodeLogger.verbose('Verbose Message');
-fancyNodeLogger.note('Note Message');
-fancyNodeLogger.info('Infomation Message');
-fancyNodeLogger.wait('Wait Message');
-fancyNodeLogger.success('Success Message');
-fancyNodeLogger.done('Done Message');
-fancyNodeLogger.warning('Warning Message');
-fancyNodeLogger.issue('Issue Message');
-fancyNodeLogger.error('Error Message');
-fancyNodeLogger.failure('Failure Message');
+fancyNodeLogger.verbose('Verbose Message\n');
+fancyNodeLogger.note('Note Message\n');
+fancyNodeLogger.info('Infomation Message\n');
+fancyNodeLogger.wait('Wait Message\n');
+fancyNodeLogger.success('Success Message\n');
+fancyNodeLogger.done('Done Message\n');
+fancyNodeLogger.warning('Warning Message\n');
+fancyNodeLogger.issue('Issue Message\n');
+fancyNodeLogger.error('Error Message\n');
+fancyNodeLogger.failure('Failure Message\n');
 
 // With Title
-fancyNodeLogger.verbose('Verbose Title', 'Verbose Message');
-fancyNodeLogger.note('Note Title', 'Note Message');
-fancyNodeLogger.info('Infomation Title', 'Infomation Message');
-fancyNodeLogger.wait('Wait Title', 'Wait Message');
-fancyNodeLogger.success('Success Title', 'Success Message');
-fancyNodeLogger.done('Done Title', 'Done Message');
-fancyNodeLogger.warning('Warning Title', 'Warning Message');
-fancyNodeLogger.issue('Issue Title', 'Issue Message');
-fancyNodeLogger.error('Error Title', 'Error Message');
-fancyNodeLogger.failure('Failure Title', 'Failure Message');
+fancyNodeLogger.verbose('Verbose Title', 'Verbose Message\n');
+fancyNodeLogger.note('Note Title', 'Note Message\n');
+fancyNodeLogger.info('Infomation Title', 'Infomation Message\n');
+fancyNodeLogger.wait('Wait Title', 'Wait Message\n');
+fancyNodeLogger.success('Success Title', 'Success Message\n');
+fancyNodeLogger.done('Done Title', 'Done Message\n');
+fancyNodeLogger.warning('Warning Title', 'Warning Message\n');
+fancyNodeLogger.issue('Issue Title', 'Issue Message\n');
+fancyNodeLogger.error('Error Title', 'Error Message\n');
+fancyNodeLogger.failure('Failure Title', 'Failure Message\n');
