@@ -10,7 +10,7 @@
         "README.md"
     ],
     "scripts": {
-        "example": "node examples/base.js",
+        "example": "node examples/basic.js",
         "build": "gulp build",
         "do-publish": "npm run build && npm publish"
     },

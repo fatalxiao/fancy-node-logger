@@ -7,31 +7,7 @@ module.exports = {
     'env': {
         'node': true
     },
-    'globals': {
-        'Atomics': 'readonly',
-        'SharedArrayBuffer': 'readonly'
-    },
     'parser': '@babel/eslint-parser',
-    'parserOptions': {
-        'ecmaVersion': 2018,
-        'sourceType': 'module'
-    },
-    'settings': {
-        'propWrapperFunctions': [
-            'forbidExtraProps', {
-                'property': 'freeze',
-                'object': 'Object'
-            }, {
-                'property': 'myFavoriteWrapper'
-            }
-        ],
-        'linkComponents': [
-            'Hyperlink', {
-                'name': 'Link',
-                'linkAttribute': 'to'
-            }
-        ]
-    },
     'rules': {
 
         /**
