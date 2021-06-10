@@ -36,13 +36,11 @@
         "@babel/eslint-parser": "^7.14.4",
         "@babel/plugin-transform-runtime": "^7.14.3",
         "@babel/preset-env": "^7.14.4",
-        "babel-jest": "^27.0.2",
         "core-js": "^3.14.0",
         "eslint": "^7.28.0",
         "esm": "^3.2.25",
         "gulp": "^4.0.2",
         "gulp-babel": "^8.0.0",
-        "gulp-uglify": "^3.0.2",
-        "jest": "^27.0.4"
+        "gulp-uglify": "^3.0.2"
     }
 }

@@ -6,6 +6,8 @@
 
 // Statics
 const Type = require('./Type');
+const SeverityStyles = require('./SeverityStyles');
+const TitleStyles = require('./TitleStyles');
 
 // Vendors
 const chalk = require('chalk');
@@ -30,50 +32,6 @@ class FancyNodeLogger {
                 return [args[0], args[1], args[2]];
             default:
                 return [];
-        }
-    };
-
-    /**
-     * get default severity style
-     * @param type
-     * @returns {string[]}
-     */
-    getDefaultSeverityStyle = type => {
-        switch (type) {
-            case Type.VERBOSE:
-                return ['bgWhite', 'black'];
-            case Type.INFO:
-                return ['bgBlueBright', 'black'];
-            case Type.SUCCESS:
-                return ['bgGreenBright', 'black'];
-            case Type.WARNING:
-                return ['bgYellowBright', 'black'];
-            case Type.ERROR:
-                return ['bgRedBright', 'black'];
-            default:
-                return ['bgWhite', 'black'];
-        }
-    };
-
-    /**
-     * get default title style
-     * @param type
-     * @returns {[string]}
-     */
-    getDefaultTitleStyle = type => {
-        switch (type) {
-            case Type.VERBOSE:
-                return ['white'];
-            case Type.INFO:
-                return ['blueBright'];
-            case Type.SUCCESS:
-                return ['greenBright'];
-            case Type.WARNING:
-                return ['yellowBright'];
-            case Type.ERROR:
-                return ['redBright'];
-            default:
-                return ['white'];
         }
     };
 
@@ -138,8 +96,8 @@ class FancyNodeLogger {
         const [severity, title, msg] = this.parseMessages(...args);
 
         this.print(
-            severity, this.getDefaultSeverityStyle(type),
-            title, this.getDefaultTitleStyle(type),
+            severity, SeverityStyles[type],
+            title, TitleStyles[type],
             msg
         );
 
@@ -258,5 +216,7 @@ class FancyNodeLogger {
 
 const fancyNodeLogger = new FancyNodeLogger();
 fancyNodeLogger.Type = Type;
+fancyNodeLogger.SeverityStyles = SeverityStyles;
+fancyNodeLogger.TitleStyles = TitleStyles;
 
 module.exports = fancyNodeLogger;
